@@ -124,16 +124,28 @@ def displayWinner(guess1, guess2, player1, player2):
     print(player2,"wins! Scissors wins against paper.")
     print()   
 
+player1 = getPlayer1Name()
+player2 = getPlayer2Name()
 count = 0
-while count < 4:
+while True:
+  count+=1
+  if count < 4:
+    guess1 = getPlayer1Guess(player1)
+    guess2 = getPlayer2Guess(player2)
+    displayWinner(guess1, guess2, player1, player2)
+    
+    print("Round",count)
+    print()
+  
+  exit = input("Would like to exit? ")
+  if exit.lower() == 'yes':
+    
+    
+    
+  
   
   
 
 
 if __name__ == "__main__":
-  player1 = getPlayer1Name()
-  player2 = getPlayer2Name()
-  guess1 = getPlayer1Guess(player1)
-  guess2 = getPlayer2Guess(player2)
-  displayWinner(guess1, guess2, player1, player2)
   endGame()
